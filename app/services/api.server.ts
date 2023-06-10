@@ -43,9 +43,9 @@ export async function getProducts(query?: string, afterCursor?: string, beforeCu
   const variables: Record<string, unknown> = { query, after: afterCursor, before: beforeCursor }
 
   if (!beforeCursor) {
-    variables.first = 6
+    variables.first = 10
   } else {
-    variables.last = 6
+    variables.last = 10
   }
 
   const response = await request(API, GetProducts, variables)
